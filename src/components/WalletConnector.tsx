@@ -8,7 +8,6 @@ interface WalletConnectorProps {
   onConnectionChange: (connected: boolean) => void;
 }
 
-// Mock accounts for demonstration
 const MOCK_ACCOUNTS = [
   '0x71C7656EC7ab88b098defB751B7401B5f6d8976F',
   '0xAb5801a7D398351b8bE11C439e05C5B3259aec9B',
@@ -28,10 +27,10 @@ const WalletConnector: React.FC<WalletConnectorProps> = ({
     setError('');
     
     try {
-      // Simulate API delay
+     
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Check if MetaMask (or similar) is installed
+      
       if (typeof (window as any).ethereum !== 'undefined') {
         // Real MetaMask flow
         const accounts = await (window as any).ethereum.request({
@@ -45,7 +44,6 @@ const WalletConnector: React.FC<WalletConnectorProps> = ({
           onConnectionChange(true);
         }
       } else {
-        // MetaMask not installed - use mock for demo
         const randomAccount = MOCK_ACCOUNTS[Math.floor(Math.random() * MOCK_ACCOUNTS.length)];
         setAccount(randomAccount);
         onConnect(randomAccount);
