@@ -4,7 +4,7 @@ import WalletConnector from './components/WalletConnector';
 import FlightSelector, { Flight } from './components/FlightSelector';
 import GasEstimator from './components/GasEstimator';
 import TransactionTracker from './components/TransactionTracker';
-import MyMelodyMascot from './components/MyMelodyMascot';
+
 
 function App() {
   const [account, setAccount] = useState<string>('');
@@ -32,7 +32,6 @@ function App() {
       <div className="floating-heart" style={{ left: '5%', top: '90%', color: '#FF1493' }}>♥</div>
     </>
   );
-
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 8, position: 'relative' }}>
       <FloatingDecorations />
