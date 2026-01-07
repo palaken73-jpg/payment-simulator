@@ -1,13 +1,5 @@
 import React from 'react';
-import { 
-  Card, 
-  CardContent, 
-  Typography, 
-  Button, 
-  Box,
-  Chip,
-  Avatar 
-} from '@mui/material';
+import { Card, CardContent, Typography, Button, Box,Chip,Avatar } from '@mui/material';
 import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
 import FlightLandIcon from '@mui/icons-material/FlightLand';
 
@@ -28,9 +20,9 @@ interface FlightSelectorProps {
 }
 
 const DEFAULT_FLIGHTS: Flight[] = [
-  { id: 1, from: 'JFK', to: 'LAX', price: 0.85, airline: 'FlyAnyTrip Air', token: 'ETH', duration: '5h 45m' },
-  { id: 2, from: 'LHR', to: 'CDG', price: 0.42, airline: 'Web3 Airways', token: 'USDC', duration: '1h 20m' },
-  { id: 3, from: 'SFO', to: 'HND', price: 1.25, airline: 'Crypto Airlines', token: 'ETH', duration: '10h 30m' },
+  { id: 101, from: 'Amd', to: 'Mum', price: 0.85, airline: 'Air India', token: 'ETH', duration: '5h 45m' },
+  { id: 102, from: 'Amd', to: 'Delhi', price: 0.42, airline: 'Spicejet', token: 'USDC', duration: '1h 20m' },
+  { id: 103, from: 'Amd', to: 'Bangalore', price: 1.25, airline: 'Air India', token: 'ETH', duration: '10h 30m' },
 ];
 
 const FlightSelector: React.FC<FlightSelectorProps> = ({ 
