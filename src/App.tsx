@@ -27,10 +27,10 @@ function App() {
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: 4 }}>
         <Typography variant="h3" gutterBottom color="primary" fontWeight="bold">
-          ✈️ FlyAnyTrip Web3 Simulator
+          Ticket Booking Web3 Simulator
         </Typography>
         <Typography variant="subtitle1" color="text.secondary">
-          Book flights with cryptocurrency • Powered by blockchain
+          Book flights with Ease • Powered by blockchain
         </Typography>
       </Box>
 
@@ -86,7 +86,7 @@ function App() {
                 {isConnected ? (
                   <Box>
                     <Typography variant="body2" color="success.main" gutterBottom>
-                      ✅ Wallet connected and ready for payment
+                      Your wallet is successfully connected and ready for payment
                     </Typography>
                     
                     <Box sx={{ mt: 3 }}>
