@@ -179,7 +179,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
                   {totalAmount.toFixed(4)} {token}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  ≈ ${totalInr.toFixed(2)} INR
+                  ≈ ${totalUsd.toFixed(2)} INR
                 </Typography>
               </Box>
             </Box>
