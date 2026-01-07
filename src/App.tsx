@@ -5,6 +5,7 @@ import FlightSelector, { Flight } from './components/FlightSelector';
 import GasEstimator from './components/GasEstimator';
 import TransactionTracker from './components/TransactionTracker';
 
+
 function App() {
   const [_, setAccount] = useState<string>(''); 
   const [isConnected, setIsConnected] = useState<boolean>(false);
@@ -21,6 +22,15 @@ function App() {
   const handleSelectFlight = (flight: Flight) => {
     setSelectedFlight(flight);
   };
+
+  const FloatingDecorations = () => (
+  <>
+    <div className="floating-heart" style={{ left: '10%', top: '20%', color: '#FFB6C1' }}>♥</div>
+    <div className="floating-heart" style={{ left: '85%', top: '40%', color: '#DDA0DD' }}>♥</div>
+    <div className="floating-heart" style={{ left: '15%', top: '70%', color: '#FF8FAB' }}>♥</div>
+    <div className="floating-heart" style={{ left: '90%', top: '80%', color: '#FF69B4' }}>♥</div>
+    <div className="floating-heart" style={{ left: '5%', top: '90%', color: '#FF1493' }}>♥</div>
+  </>
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
