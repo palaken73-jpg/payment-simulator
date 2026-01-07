@@ -6,7 +6,7 @@ import GasEstimator from './components/GasEstimator';
 import TransactionTracker from './components/TransactionTracker';
 
 function App() {
-  const [_, setAccount] = useState<string>(''); // Account state (unused in UI)
+  const [_, setAccount] = useState<string>(''); 
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [selectedFlight, setSelectedFlight] = useState<Flight | null>(null);
 
@@ -27,10 +27,10 @@ function App() {
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: 4 }}>
         <Typography variant="h3" gutterBottom color="primary" fontWeight="bold">
-          ✈️ FlyAnyTrip Web3 Simulator
+          Ticket Booking Web3 Simulator
         </Typography>
         <Typography variant="subtitle1" color="text.secondary">
-          Book flights with cryptocurrency • Powered by blockchain
+          Book flights with ease • Powered by blockchain
         </Typography>
       </Box>
 
@@ -86,10 +86,9 @@ function App() {
                 {isConnected ? (
   <Box>
     <Typography variant="body2" color="success.main" gutterBottom>
-      ✅ Wallet connected and ready for payment
+      Your wallet is successfully connected and ready for payment
     </Typography>
     
-    {/* ADD THESE TWO NEW COMPONENTS */}
     <Box sx={{ mt: 3 }}>
       <GasEstimator 
         amount={selectedFlight.price}
@@ -107,7 +106,7 @@ function App() {
   </Box>
 ) : (
   <Typography variant="body2" color="text.secondary">
-    Connect your wallet to proceed with payment
+    Connect your wallet and Proceed with payment
   </Typography>
 )}
               </Box>
