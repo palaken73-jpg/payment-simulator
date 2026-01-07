@@ -16,14 +16,12 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
   const [gasSpeed, setGasSpeed] = useState<GasSpeed>('average');
   const [gasPrice, setGasPrice] = useState<number>(0.000025);
   const networkFee = 0.0005;
-  // Mock gas prices based on speed
   const gasPrices = {
     slow: 0.000020,
     average: 0.000025,
     fast: 0.000032
   };
-  
-  // Update gas price when speed changes
+ 
   useEffect(() => {
   const gasPrices = {
     slow: 0.000020,
@@ -32,13 +30,11 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
   };
   setGasPrice(gasPrices[gasSpeed]);
 }, [gasSpeed]);
-  
-  // Calculate total gas cost
-  const gasCost = amount * 0.002; // Simplified: 0.2% of transaction
+
+  const gasCost = amount * 0.002; 
   const totalGas = gasCost + gasPrice + networkFee;
   const totalAmount = amount + totalGas;
   
-  // ETH to USD conversion (mock)
   const ethToUsd = 2500;
   const totalUsd = totalAmount * ethToUsd;
   
@@ -58,7 +54,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
         borderRadius: 2,
         border: '1px solid #e0e0e0'
       }}>
-        {/* Gas Speed Selector */}
+     
         <Box sx={{ mb: 3 }}>
           <Typography variant="subtitle2" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
             <SpeedIcon fontSize="small" /> Transaction Speed
@@ -69,7 +65,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
                 key={speed}
                 label={
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                    {speed === 'slow' ? '🐢 Slow' : speed === 'average' ? '🚗 Average' : '🚀 Fast'}
+                    {speed === 'slow' ? 'Slow' : speed === 'average' ? ' Average' : 'Fast'}
                     {gasSpeed === speed && ' ✓'}
                   </Box>
                 }
@@ -91,10 +87,10 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
           </Typography>
         </Box>
         
-        {/* Cost Breakdown */}
+       
         <Box sx={{ mb: 3 }}>
           <Typography variant="subtitle2" gutterBottom>
-            💰 Cost Breakdown
+            Cost Breakdown
           </Typography>
           
           <Box sx={{ 
@@ -103,7 +99,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
             borderRadius: 1,
             border: '1px solid #e0e0e0'
           }}>
-            {/* Flight Cost */}
+            
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
               <Typography variant="body2">
                 Flight Ticket
@@ -113,7 +109,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
               </Typography>
             </Box>
             
-            {/* Gas Cost */}
+            
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <Typography variant="body2">
@@ -128,7 +124,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
               </Typography>
             </Box>
             
-            {/* Gas Price */}
+            
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
               <Typography variant="body2">
                 Gas Price ({gasSpeed})
@@ -138,13 +134,13 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
               </Typography>
             </Box>
             
-            {/* Network Fee */}
+          
             <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
                 <Typography variant="body2">
                   Network Fee
                 </Typography>
-                <Tooltip title="FlyAnyTrip network fee">
+                <Tooltip title="network fee">
                   <InfoIcon fontSize="small" sx={{ color: 'text.secondary', fontSize: 14 }} />
                 </Tooltip>
               </Box>
@@ -153,7 +149,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
               </Typography>
             </Box>
             
-            {/* Divider */}
+           
             <Box sx={{ 
               height: 1, 
               bgcolor: '#e0e0e0', 
@@ -173,24 +169,24 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
               }
             }} />
             
-            {/* Total */}
+            
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography variant="subtitle1" fontWeight="bold">
-                Total Amount
+                Total Amount : 
               </Typography>
               <Box sx={{ textAlign: 'right' }}>
                 <Typography variant="h6" color="primary" fontWeight="bold">
                   {totalAmount.toFixed(4)} {token}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
-                  ≈ ${totalUsd.toFixed(2)} USD
+                  ≈ ${totalInr.toFixed(2)} INR
                 </Typography>
               </Box>
             </Box>
           </Box>
         </Box>
         
-        {/* Savings Info */}
+      
         <Box sx={{ 
           p: 2, 
           bgcolor: '#e8f5e9', 
@@ -202,7 +198,7 @@ const GasEstimator: React.FC<GasEstimatorProps> = ({ amount, token }) => {
             <Box component="span" fontWeight="medium" color="success.dark">
               Token Rewards:
             </Box>
-            You'll earn <Box component="span" fontWeight="bold">{(amount * 10).toFixed(0)} FAT</Box> tokens
+            You'll earn <Box component="span" fontWeight="bold">{(amount * 10).toFixed(0)} </Box> tokens
           </Typography>
           <Typography variant="caption" color="success.dark" sx={{ mt: 0.5, display: 'block' }}>
             Redeemable for future flights and upgrades
