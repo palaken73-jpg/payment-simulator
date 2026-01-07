@@ -65,7 +65,6 @@ const TransactionTracker: React.FC<TransactionTrackerProps> = ({
       
       // Success
       setCurrentStep('success');
-      // Generate mock transaction hash
       setTxHash(`0x${Math.random().toString(16).substring(2, 10)}...${Math.random().toString(16).substring(2, 10)}`);
       
     } catch (error) {
@@ -103,7 +102,7 @@ const TransactionTracker: React.FC<TransactionTrackerProps> = ({
       </Typography>
       
       <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
-        {/* Progress Bar */}
+      
         <Box sx={{ mb: 4 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
             {steps.map((step, index) => {
@@ -150,7 +149,6 @@ const TransactionTracker: React.FC<TransactionTrackerProps> = ({
           />
         </Box>
 
-        {/* Status Display */}
         {currentStep === 'idle' && (
           <Box sx={{ textAlign: 'center', py: 3 }}>
             <Typography variant="h5" color="primary" gutterBottom>
@@ -210,13 +208,13 @@ const TransactionTracker: React.FC<TransactionTrackerProps> = ({
               }
               sx={{ mb: 3 }}
             >
-              <AlertTitle>Payment Successful! 🎉</AlertTitle>
+              <AlertTitle>Payment Successful! </AlertTitle>
               Your flight has been booked and confirmed on the blockchain.
             </Alert>
             
             <Paper variant="outlined" sx={{ p: 2, borderRadius: 2 }}>
               <Typography variant="subtitle2" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                📋 Transaction Details
+                 Transaction Details
               </Typography>
               
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 1 }}>
@@ -269,7 +267,7 @@ const TransactionTracker: React.FC<TransactionTrackerProps> = ({
             
             <Box sx={{ mt: 3, p: 2, bgcolor: '#e8f5e9', borderRadius: 2 }}>
               <Typography variant="body2" fontWeight="bold" gutterBottom>
-                🎁 You earned {(amount * 10).toFixed(0)} FAT tokens!
+                You earned {(amount * 10).toFixed(0)} tokens!
               </Typography>
               <Typography variant="caption" color="text.secondary">
                 Tokens have been deposited to your wallet. Use them for future bookings.
