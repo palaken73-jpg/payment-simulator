@@ -30,7 +30,7 @@ function App() {
           Ticket Booking Web3 Simulator
         </Typography>
         <Typography variant="subtitle1" color="text.secondary">
-          Book flights with ease • Powered by blockchain
+          Book flights with Ease • Powered by blockchain
         </Typography>
       </Box>
 
