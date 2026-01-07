@@ -4,10 +4,10 @@ import WalletConnector from './components/WalletConnector';
 import FlightSelector, { Flight } from './components/FlightSelector';
 import GasEstimator from './components/GasEstimator';
 import TransactionTracker from './components/TransactionTracker';
-
+import MyMelodyMascot from './components/MyMelodyMascot';
 
 function App() {
-  const [_, setAccount] = useState<string>(''); 
+  const [account, setAccount] = useState<string>('');
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [selectedFlight, setSelectedFlight] = useState<Flight | null>(null);
 
@@ -24,23 +24,26 @@ function App() {
   };
 
   const FloatingDecorations = () => (
-  <>
-    <div className="floating-heart" style={{ left: '10%', top: '20%', color: '#FFB6C1' }}>♥</div>
-    <div className="floating-heart" style={{ left: '85%', top: '40%', color: '#DDA0DD' }}>♥</div>
-    <div className="floating-heart" style={{ left: '15%', top: '70%', color: '#FF8FAB' }}>♥</div>
-    <div className="floating-heart" style={{ left: '90%', top: '80%', color: '#FF69B4' }}>♥</div>
-    <div className="floating-heart" style={{ left: '5%', top: '90%', color: '#FF1493' }}>♥</div>
-  </>
+    <>
+      <div className="floating-heart" style={{ left: '10%', top: '20%', color: '#FFB6C1' }}>♥</div>
+      <div className="floating-heart" style={{ left: '85%', top: '40%', color: '#DDA0DD' }}>♥</div>
+      <div className="floating-heart" style={{ left: '15%', top: '70%', color: '#FF8FAB' }}>♥</div>
+      <div className="floating-heart" style={{ left: '90%', top: '80%', color: '#FF69B4' }}>♥</div>
+      <div className="floating-heart" style={{ left: '5%', top: '90%', color: '#FF1493' }}>♥</div>
+    </>
+  );
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 4, mb: 8 }}>
+    <Container maxWidth="lg" sx={{ mt: 4, mb: 8, position: 'relative' }}>
+      <FloatingDecorations />
+      
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: 4 }}>
         <Typography variant="h3" gutterBottom color="primary" fontWeight="bold">
-          Ticket Booking Web3 Simulator
+          ✈️ FlyAnyTrip Web3 Simulator
         </Typography>
         <Typography variant="subtitle1" color="text.secondary">
-          Book flights with Ease • Powered by blockchain
+          Book flights with cryptocurrency • Powered by blockchain
         </Typography>
       </Box>
 
@@ -94,31 +97,31 @@ function App() {
                 </Box>
                 
                 {isConnected ? (
-  <Box>
-    <Typography variant="body2" color="success.main" gutterBottom>
-      Your wallet is successfully connected and ready for payment
-    </Typography>
-    
-    <Box sx={{ mt: 3 }}>
-      <GasEstimator 
-        amount={selectedFlight.price}
-        token={selectedFlight.token}
-      />
-    </Box>
-    
-    <Box sx={{ mt: 3 }}>
-      <TransactionTracker 
-        isConnected={isConnected}
-        amount={selectedFlight.price}
-        token={selectedFlight.token}
-      />
-    </Box>
-  </Box>
-) : (
-  <Typography variant="body2" color="text.secondary">
-    Connect your wallet and Proceed with payment
-  </Typography>
-)}
+                  <Box>
+                    <Typography variant="body2" color="success.main" gutterBottom>
+                      ✅ Wallet connected and ready for payment
+                    </Typography>
+                    
+                    <Box sx={{ mt: 3 }}>
+                      <GasEstimator 
+                        amount={selectedFlight.price}
+                        token={selectedFlight.token}
+                      />
+                    </Box>
+                    
+                    <Box sx={{ mt: 3 }}>
+                      <TransactionTracker 
+                        isConnected={isConnected}
+                        amount={selectedFlight.price}
+                        token={selectedFlight.token}
+                      />
+                    </Box>
+                  </Box>
+                ) : (
+                  <Typography variant="body2" color="text.secondary">
+                    Connect your wallet to proceed with payment
+                  </Typography>
+                )}
               </Box>
             ) : (
               <Typography variant="body2" color="text.secondary" align="center" sx={{ py: 4 }}>
@@ -128,6 +131,18 @@ function App() {
           </Paper>
         </Box>
       </Box>
+
+      {/* Footer */}
+      <Box sx={{ mt: 6, textAlign: 'center', color: 'text.secondary' }}>
+        <Typography variant="body2">
+          This is a simulation for FlyAnyTrip internship application • Built overnight
+        </Typography>
+        <Typography variant="caption" display="block">
+          React + TypeScript + Web3.js • Not a real booking system
+        </Typography>
+      </Box>
+
+      <MyMelodyMascot />
     </Container>
   );
 }
